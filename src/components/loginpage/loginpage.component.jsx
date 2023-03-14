@@ -1,37 +1,29 @@
-import {Component} from 'react'
+import React, { useState } from 'react';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
-/* Props:
-    cancelHandler
-    connectHandler= (loginName)
+/* Implementation as functional component
+   Props:
+    cancelHandler = (event) => {}
+    connectHandler = (loginName) => {}
 */
-class LoginPage extends Component {
+const LoginPage = (props) => {
 
-    constructor()
-    {
-      super();
-      this.state = {
-        userName: '',
-        password: ''
-      }
-    }
+    const [credentials, setCredentials] = useState('');
 
-    onClickConnect = () => {        
+    const onClickConnect = () => {        
         console.log('Execute click Connect handler')
-        this.props.connectHandler({loginName: this.state.userName });
+        props.connectHandler(credentials);
     };
 
-    render() {
-        return(
-            <div>
-                <div><TextField label='Login name' onChange={(event) => this.setState({userName: event.target.value})}/></div>
-                <div><TextField label='Password'/></div>
-                <div><Button onClick={this.onClickConnect}>Connect</Button><Button onClick={this.props.cancelHandler}>Cancel</Button></div>
-            </div>
-        );
-    }
+    return(
+        <div>
+            <div><TextField label='Login name' onChange={(event) => setCredentials(event.target.value)}/></div>
+            <div><TextField label='Password'/></div>
+            <div><Button onClick={onClickConnect}>Connect</Button><Button onClick={props.cancelHandler}>Cancel</Button></div>
+        </div>
+    );
 }
 
 export default LoginPage

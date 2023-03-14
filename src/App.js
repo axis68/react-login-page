@@ -1,68 +1,54 @@
-import { Component } from 'react'
+import React, { useState } from 'react';
+
 import './App.css';
 import LoginField from './components/loginfield/loginfield.component'
 
 import LoginPage from './components/loginpage/loginpage.component'
 import WelcomePage from './components/welcomepage/welcomepage.component'
 
-class App extends Component
-{
-  constructor()
-  {
-    super();
-    this.state = {
-      currentPage: '',
-      userName: ''
-    }
-  }
+const App = () => {                                       // What about the notation "function App() { }" ?
+
+  const [currentPage, setCurrentPage] = useState('');
+  const [userName, setUserName] = useState('');           // Do I nead a separate hook?
 
   // Handlers Login field
 
-  onClickLogin = (event) => {
+  const onClickLogin = (event) => {
     console.log('Clicked login');
-    this.setState({currentPage: 'LoginPage'});
+    setCurrentPage('LoginPage');
   }
   
-  onClickLogout = (event) => {
-    this.setState({currentPage: '', userName: ''})
+  const onClickLogout = (event) => {
+    setCurrentPage('');
+    setUserName('');
   }
 
   // Handlers login page
 
-  onClickPageLoginCancel = (event) => {
-    this.setState({currentPage: ''});
+  const onClickPageLoginCancel = (event) => {
+    setCurrentPage('');
   }
 
-  onClickPageLoginConnect = (event) => {
-    this.setState({
-      currentPage: '', 
-      userName: event.loginName
-    });
+  const onClickPageLoginConnect = (event) => {
+    setCurrentPage('');
+    setUserName(event);
   }
 
+  return(
+    <div className="App">
+      <header className="MyApplication">
 
-  render() {
-    return (
-      <div className="App">
-        <header className="MyApplication">
-  
-          <LoginField loginName={this.state.userName} loginClickHandler={this.onClickLogin} logoutClickHandler={this.onClickLogout}/>
+        <LoginField loginName={userName} loginClickHandler={onClickLogin} logoutClickHandler={onClickLogout}/>
 
-            { this.state.currentPage &&
-                <LoginPage connectHandler={this.onClickPageLoginConnect} cancelHandler={this.onClickPageLoginCancel}/>
-            }
-            { !this.state.currentPage &&
-                <WelcomePage/>
-            }
-
-  
-        </header>
-      </div>
-    );
-  
-  }
-
-
+          { currentPage &&
+              <LoginPage connectHandler={onClickPageLoginConnect} cancelHandler={onClickPageLoginCancel}/>
+          }
+          { !currentPage &&
+              <WelcomePage/>
+          }
+      </header>
+    </div>
+  );
 }
 
 export default App;
