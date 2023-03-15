@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
 import './App.css';
-import LoginField from './components/loginfield/loginfield.component'
 
+import LoginField from './components/loginfield/loginfield.component'
 import LoginPage from './components/loginpage/loginpage.component'
 import WelcomePage from './components/welcomepage/welcomepage.component'
 
-const App = () => {                                       // What about the notation "function App() { }" ?
+const App = () => {                                       // Equivalent to "function App() { }" ?
 
   const [currentPage, setCurrentPage] = useState('');
   const [userName, setUserName] = useState('');           // Do I nead a separate hook?
@@ -40,10 +40,9 @@ const App = () => {                                       // What about the nota
 
         <LoginField loginName={userName} loginClickHandler={onClickLogin} logoutClickHandler={onClickLogout}/>
 
-          { currentPage &&
+          { currentPage ?
               <LoginPage connectHandler={onClickPageLoginConnect} cancelHandler={onClickPageLoginCancel}/>
-          }
-          { !currentPage &&
+              :
               <WelcomePage/>
           }
       </header>

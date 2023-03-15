@@ -1,14 +1,14 @@
 import Button from '@mui/material/Button';
 
-const LoginField = (props) => {
-
-    let content;
-    if (props.loginName) {
-        content = <div>USER &lt;{props.loginName}&gt;<Button onClick={props.logoutClickHandler}>Logout</Button></div>;
-    } else {
-        content = <div><Button onClick={props.loginClickHandler}>Login</Button></div>;
-    }
-    return(content);
+const LoginField = ({loginName, loginClickHandler, logoutClickHandler}) => {
+    return(<>
+        {
+            loginName?
+                <div>USER &lt;{loginName}&gt;<Button onClick={logoutClickHandler}>Logout</Button></div>
+                :
+                <div><Button onClick={loginClickHandler}>Login</Button></div>
+        }  
+    </>);   // See here how we can use HTML fragment
 }
 
 export default LoginField
