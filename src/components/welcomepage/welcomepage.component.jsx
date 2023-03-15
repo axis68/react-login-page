@@ -4,7 +4,7 @@ import logo from './logo.svg';
 const WelcomePage = () => {
     return(
         <div>
-            <p>Welcome my son, welcome to the machine - this time with functional components</p>
+            <p>A small improvement has been implemented</p>
             <img src={logo} className="App-logo" alt="logo" />
         </div>
     );    
