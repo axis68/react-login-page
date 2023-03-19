@@ -4,7 +4,7 @@ import logo from './logo.svg';
 const WelcomePage = () => {
     return(
         <div>
-            <p>A small improvement has been implemented</p>
+            <p>Implemented React Routing</p>
             <img src={logo} className="App-logo" alt="logo" />
         </div>
     );    

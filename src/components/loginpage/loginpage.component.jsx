@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
-const LoginPage = ({connectHandler, cancelHandler}) => {    // Instead of "props" it is better to use specific variables
+const LoginPage = ({connectHandler}) => {                        // Instead of "props" it is better to use specific variables
 
     const [credentials, setCredentials] = useState('');
 
@@ -12,13 +13,15 @@ const LoginPage = ({connectHandler, cancelHandler}) => {    // Instead of "props
         connectHandler(credentials);
     };
 
-    const onLoginNameChanged = (event) => setCredentials(event.target.value); // a bit performanter than instantiating everytimes the function
+    const onLoginNameChanged = (event) => setCredentials(event.target.value); // a bit more performant than instantiating everytimes the function
 
     return(
         <>
             <div><TextField label='Login name' onChange={onLoginNameChanged}/></div>
             <div><TextField label='Password'/></div>
-            <div><Button onClick={onClickConnect}>Connect</Button><Button onClick={cancelHandler}>Cancel</Button></div>
+            <div><Button onClick={onClickConnect}>Connect</Button>
+            <Link className='nav-logout' to='/'>Cancel</Link>
+            </div>
         </>
     );
 }

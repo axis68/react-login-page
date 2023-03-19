@@ -1,53 +1,44 @@
+import { Routes, Route } from 'react-router-dom';
 import React, { useState } from 'react';
+import { lazy } from 'react';
 
 import './App.css';
 
-import LoginField from './components/loginfield/loginfield.component'
-import LoginPage from './components/loginpage/loginpage.component'
-import WelcomePage from './components/welcomepage/welcomepage.component'
+import LoginPage from './components/loginpage/loginpage.component';
+import Navigation from './routes/navigation/navigation.component';
+const WelcomePage = lazy(() => import('./routes/welcomepage/welcomepage.component'));
 
-const App = () => {                                       // Equivalent to "function App() { }" ?
+// const LoginPage = lazy(() => import('./components/loginpage/loginpage.component'));
+// Uncaught Error: A component suspended while responding to synchronous input. This will cause the UI 
+// to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition.
 
-  const [currentPage, setCurrentPage] = useState('');
-  const [userName, setUserName] = useState('');           // Do I nead a separate hook?
+const App = () => {
+    const [userName, setUserName] = useState('');
 
-  // Handlers Login field
+    // Handlers login field
+    const onClickLogoutHandler = (event) => {
+      setUserName('');
+    }
 
-  const onClickLogin = (event) => {
-    console.log('Clicked login');
-    setCurrentPage('LoginPage');
-  }
-  
-  const onClickLogout = (event) => {
-    setCurrentPage('');
-    setUserName('');
-  }
+    // Handlers login page
+    const onClickPageLoginConnectHandler = (event) => {
+      setUserName(event);
+    }
 
-  // Handlers login page
+    return (
+      <div className="App">
+        <header className="MyApplication">
+        
+        <Routes>
+          <Route path='/' element={<Navigation loginName={userName} onClickLogoutHandler={onClickLogoutHandler}/>}>
+            <Route index element={<WelcomePage />}/>
+            <Route path='login' element={<LoginPage connectHandler={onClickPageLoginConnectHandler}/>}/>
+          </Route>
+        </Routes>
 
-  const onClickPageLoginCancel = (event) => {
-    setCurrentPage('');
-  }
-
-  const onClickPageLoginConnect = (event) => {
-    setCurrentPage('');
-    setUserName(event);
-  }
-
-  return(
-    <div className="App">
-      <header className="MyApplication">
-
-        <LoginField loginName={userName} loginClickHandler={onClickLogin} logoutClickHandler={onClickLogout}/>
-
-          { currentPage ?
-              <LoginPage connectHandler={onClickPageLoginConnect} cancelHandler={onClickPageLoginCancel}/>
-              :
-              <WelcomePage/>
-          }
-      </header>
-    </div>
-  );
+        </header>
+      </div>
+    );
 }
 
 export default App;
