@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_login_page=self.webpackChunkreact_login_page||[]).push([[87],{87:function(e,c,n){n.r(c),n.d(c,{default:function(){return s}});n(791);var t=n.p+"static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",a=n(184),s=function(){return(0,a.jsxs)("div",{children:[(0,a.jsx)("p",{children:"Implemented React Routing"}),(0,a.jsx)("img",{src:t,className:"App-logo",alt:"logo"})]})}}}]);
+//# sourceMappingURL=87.e223c76a.chunk.js.map
