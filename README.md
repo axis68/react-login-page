@@ -8,7 +8,6 @@ This apps demonstrate the interconnection between the App and 3 React components
 - Hooks: state
 - Lazy loading (:construction_worker: work in progress)
 - Routing (:construction_worker: work in progress)
-- StrictMode (:construction_worker: not started yet)
 
 # Things to be checked
 
