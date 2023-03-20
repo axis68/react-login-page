@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import { lazy } from 'react';
 
@@ -14,6 +14,7 @@ const WelcomePage = lazy(() => import('./routes/welcomepage/welcomepage.componen
 
 const App = () => {
     const [userName, setUserName] = useState('');
+    const navigate = useNavigate();
 
     // Handlers login field
     const onClickLogoutHandler = (event) => {
@@ -23,6 +24,7 @@ const App = () => {
     // Handlers login page
     const onClickPageLoginConnectHandler = (event) => {
       setUserName(event);
+      navigate('/react-login-page')
     }
 
     return (
@@ -30,9 +32,9 @@ const App = () => {
         <header className="MyApplication">
         
         <Routes>
-          <Route path='/' element={<Navigation loginName={userName} onClickLogoutHandler={onClickLogoutHandler}/>}>
+          <Route path='/react-login-page' element={<Navigation loginName={userName} onClickLogoutHandler={onClickLogoutHandler}/>}>
             <Route index element={<WelcomePage />}/>
-            <Route path='login' element={<LoginPage connectHandler={onClickPageLoginConnectHandler}/>}/>
+            <Route path='login' element={<LoginPage userName={userName} connectHandler={onClickPageLoginConnectHandler}/>}/>
           </Route>
         </Routes>
 

@@ -1,0 +1,9 @@
+.navigation {
+    display: flex;
+    padding: 20px;
+}
+
+.nav-login {
+    position: absolute;
+    right: 20px;
+}

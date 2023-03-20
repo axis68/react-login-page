@@ -9,7 +9,7 @@ const LoginField = ({loginName, loginClickHandler, onClickLogoutHandler}) => {
                 <div>USER &lt;{loginName}&gt;<Button onClick={onClickLogoutHandler}>Logout</Button></div>
                 :
                 <div className='login-field'>
-                    <Link className='nav-login' to='/login'>
+                    <Link className='nav-login' to='/react-login-page/login'>
                         Login
                     </Link>
                 </div>

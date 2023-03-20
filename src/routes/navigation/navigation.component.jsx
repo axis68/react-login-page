@@ -3,14 +3,15 @@ import { Outlet } from 'react-router-dom';
 
 import LoginField from '../../components/loginfield/loginfield.component';
 
+import './navigation.css';
+
 const Navigation = ({loginName, onClickLogoutHandler}) => {
     return(
         <Fragment>
             <div className='navigation'>
-                <div>My program</div>
+                <div className='loginfield'>My program</div>      
+                <LoginField className='loginfield' loginName={loginName} onClickLogoutHandler={onClickLogoutHandler}/>
             </div>
-            <LoginField loginName={loginName} onClickLogoutHandler={onClickLogoutHandler}/>
-        
             <Outlet/>
         </Fragment>
     );  // The rest of the application will be rendered at 'Outlet'
