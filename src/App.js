@@ -1,14 +1,14 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
-import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 
 import './App.css';
 
-import LoginPage from './components/loginpage/loginpage.component';
+// import LoginPage from './components/loginpage/loginpage.component';
 import Navigation from './routes/navigation/navigation.component';
 const WelcomePage = lazy(() => import('./routes/welcomepage/welcomepage.component'));
 
-// const LoginPage = lazy(() => import('./components/loginpage/loginpage.component'));
+const LoginPage = lazy(() => import('./components/loginpage/loginpage.component'));
 // Uncaught Error: A component suspended while responding to synchronous input. This will cause the UI 
 // to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition.
 
@@ -24,7 +24,7 @@ const App = () => {
     // Handlers login page
     const onClickPageLoginConnectHandler = (event) => {
       setUserName(event);
-      navigate('/react-login-page')
+      navigate('/react-login-page');
     }
 
     return (
@@ -34,7 +34,11 @@ const App = () => {
         <Routes>
           <Route path='/react-login-page' element={<Navigation loginName={userName} onClickLogoutHandler={onClickLogoutHandler}/>}>
             <Route index element={<WelcomePage />}/>
-            <Route path='login' element={<LoginPage userName={userName} connectHandler={onClickPageLoginConnectHandler}/>}/>
+            <Route path='login' element={
+              <Suspense fallback={<h1>Loading...</h1>}>
+                <LoginPage userName={userName} connectHandler={onClickPageLoginConnectHandler}/>
+              </Suspense>
+            }/>
           </Route>
         </Routes>
 
