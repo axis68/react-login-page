@@ -1,18 +1,17 @@
-import Button from '@mui/material/Button';
 import {Link } from 'react-router-dom';
 
 const LoginField = ({loginName, loginClickHandler, onClickLogoutHandler}) => {
 
     return(<>
         {
-            loginName?
-                <div>USER &lt;{loginName}&gt;<Button onClick={onClickLogoutHandler}>Logout</Button></div>
-                :
-                <div className='login-field'>
-                    <Link className='nav-login' to='/react-login-page/login'>
-                        Login
-                    </Link>
-                </div>
+            <div className='navigation-item-right'>
+                {
+                    loginName?
+                    <div>{loginName} <Link onClick={onClickLogoutHandler}>Logout</Link></div>
+                    :
+                    <Link to='/react-login-page/login'>Login</Link>
+                }
+            </div>
         }
     </>);   // See here how we can use HTML fragment
 }

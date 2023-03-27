@@ -1,11 +1,13 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+
+import {ReactComponent as MyAvatar} from '../../assets/face.svg';
 
 // Implementation as functional component
 const WelcomePage = () => {
     return(
         <div>
-            <p>Implemented React Routing</p>
-            <img src={logo} className="App-logo" alt="logo" />
+            <p>Hi guy!</p>
+            <MyAvatar className='logo'/>
         </div>
     );    
 }

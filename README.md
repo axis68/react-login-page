@@ -6,14 +6,13 @@ This apps demonstrate the interconnection between the App and 3 React components
 
 - Functional components
 - Hooks: state
-- Lazy loading (:construction_worker: work in progress)
-- Routing (:construction_worker: work in progress)
+- Lazy loading
+- Routing
+- Some basic CSS
 
 # Things to be checked
 
-- Login should only be possible if not logged yet
-- Login & Logout button layout
-- Layout navigation bar with CSS
+- Login should only be possible if not logged yet (:construction_worker: work in progress)
 - What is the difference between HTML and React fragment
 
 # Usage

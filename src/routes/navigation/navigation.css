@@ -1,9 +1,18 @@
 .navigation {
     display: flex;
+    flex-direction: row;
     padding: 20px;
 }
 
-.nav-login {
-    position: absolute;
+.navigation-item {
+    flex: auto;
+    padding: 5px;
+}
+
+.navigation-item > .navigation-item-right {
     right: 20px;
+}
+
+.navigation-item > .navigation-item-left {
+    left: 20px;
 }

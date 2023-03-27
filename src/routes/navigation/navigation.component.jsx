@@ -9,8 +9,9 @@ const Navigation = ({loginName, onClickLogoutHandler}) => {
     return(
         <Fragment>
             <div className='navigation'>
-                <div className='loginfield'>My program</div>      
-                <LoginField className='loginfield' loginName={loginName} onClickLogoutHandler={onClickLogoutHandler}/>
+                <div className='navigation-item-left'>My program</div>
+                <div className='navigation-item'>Middle</div>      
+                <LoginField loginName={loginName} onClickLogoutHandler={onClickLogoutHandler}/>
             </div>
             <Outlet/>
         </Fragment>

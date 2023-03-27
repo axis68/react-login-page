@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 
+import './loginpage.css';
+
 const LoginPage = ({userName, connectHandler}) => {                        // Instead of "props" it is better to use specific variables
 
     const [credentials, setCredentials] = useState('');
@@ -28,9 +30,10 @@ const LoginPage = ({userName, connectHandler}) => {                        // In
 
     return(
         <>
-            <div><TextField label='Login name' onChange={onLoginNameChanged}/></div>
-            <div><TextField label='Password'/></div>
-            <div>
+            <div className='login-page-element'>Please enter your name and password:</div>
+            <div className='login-page-element'><TextField label='Login name' onChange={onLoginNameChanged}/></div>
+            <div className='login-page-element'><TextField label='Password' type='password'/></div>
+            <div className='login-page-element'>
                 <Button onClick={onClickConnect}>Connect</Button>
                 <Button onClick={onClickCancel}>Cancel</Button>
             </div>
