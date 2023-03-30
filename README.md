@@ -1,6 +1,7 @@
 # Introduction
 
-This apps demonstrate the interconnection between the App and 3 React components: the Login Field (at the top), the Login Page and the Splash Screen
+This apps demonstrate the interconnection between the App and 3 React components: the Login Field (at the top), the Login Page and the Splash Screen.
+You can visualize the app at this [page](https://axis68.github.io/react-login-page/).
 
 # Used concepts
 

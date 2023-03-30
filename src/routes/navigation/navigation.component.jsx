@@ -11,7 +11,7 @@ const Navigation = ({loginName, onClickLogoutHandler}) => {
         <Fragment>
             <div className='navigation'>
                 <div className='navigation-item-left'>My program</div>
-                <div className='navigation-item'>Middle</div>      
+                <div className='navigation-item'>Title bar</div>      
                 <LoginField loginName={loginName} onClickLogoutHandler={onClickLogoutHandler}/>
             </div>
             <Outlet/>
