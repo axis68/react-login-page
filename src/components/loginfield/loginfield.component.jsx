@@ -2,6 +2,8 @@ import {Link } from 'react-router-dom';
 
 const LoginField = ({loginName, loginClickHandler, onClickLogoutHandler}) => {
 
+    console.log('render-login-field: <' + loginName + ">")
+
     return(<>
         {
             <div className='navigation-item-right'>

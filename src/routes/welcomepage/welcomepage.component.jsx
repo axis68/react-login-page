@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 
-import {ReactComponent as MyAvatar} from '../../assets/face.svg';
+import {ReactComponent as MyAvatar} from '../../assets/avatarsmall.svg';
 
 // Implementation as functional component
 const WelcomePage = () => {

@@ -6,6 +6,7 @@ import LoginField from '../../components/loginfield/loginfield.component';
 import './navigation.css';
 
 const Navigation = ({loginName, onClickLogoutHandler}) => {
+    console.log('render-navigation');
     return(
         <Fragment>
             <div className='navigation'>
