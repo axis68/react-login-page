@@ -11,7 +11,7 @@ const MainArea = () => {
             <h1>Available functionalities</h1>
             <div className='functionsList'>
             {
-                availableFunctions.map((funcName) => { return(<Button>{funcName}</Button>); })
+                availableFunctions.map((funcName) => { return(<Button kex='funcName'>{funcName}</Button>); })
             }
             </div>
         </>);

@@ -17,12 +17,12 @@ const App = () => {
     const onClickLogoutHandler = (event) => {
       console.log('>>> onClickLogoutHandler');
       setUserName('');
-      navigate('/react-login-page/welcome');
     }
 
     // Handlers login page
     const onClickPageLoginConnectHandler = (event) => {
       setUserName(event);
+      console.log('>>>onClickPageLogin');
       navigate('/react-login-page/main');
     }
 
