@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-login-page/static/css/main.bf2d1eaf.css",
-    "main.js": "/react-login-page/static/js/main.b84ef275.js",
+    "main.js": "/react-login-page/static/js/main.f6198beb.js",
     "static/js/177.f289b816.chunk.js": "/react-login-page/static/js/177.f289b816.chunk.js",
     "static/css/821.925d66d9.chunk.css": "/react-login-page/static/css/821.925d66d9.chunk.css",
     "static/js/821.b029c827.chunk.js": "/react-login-page/static/js/821.b029c827.chunk.js",
@@ -10,7 +10,7 @@
     "static/media/avatarsmall.svg": "/react-login-page/static/media/avatarsmall.9ea9abff94d34ad791a9279e09c4403d.svg",
     "index.html": "/react-login-page/index.html",
     "main.bf2d1eaf.css.map": "/react-login-page/static/css/main.bf2d1eaf.css.map",
-    "main.b84ef275.js.map": "/react-login-page/static/js/main.b84ef275.js.map",
+    "main.f6198beb.js.map": "/react-login-page/static/js/main.f6198beb.js.map",
     "177.f289b816.chunk.js.map": "/react-login-page/static/js/177.f289b816.chunk.js.map",
     "821.925d66d9.chunk.css.map": "/react-login-page/static/css/821.925d66d9.chunk.css.map",
     "821.b029c827.chunk.js.map": "/react-login-page/static/js/821.b029c827.chunk.js.map",
@@ -19,6 +19,6 @@
   },
   "entrypoints": [
     "static/css/main.bf2d1eaf.css",
-    "static/js/main.b84ef275.js"
+    "static/js/main.f6198beb.js"
   ]
 }
