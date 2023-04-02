@@ -2,16 +2,16 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import './mainarea.css';
 
-const MainArea = () => {
+const getFunctions = require('../../services/functions');
 
-    const availableFunctions = [ 'function-1', 'function-2', 'function-3' ];
+const MainArea = () => {
 
     return(
         <>
             <h1>Available functionalities</h1>
             <div className='functionsList'>
             {
-                availableFunctions.map((funcName) => { return(<Button kex='funcName'>{funcName}</Button>); })
+                getFunctions().map((funcName) => { return(<Button kex='funcName'>{funcName}</Button>); })
             }
             </div>
         </>);
